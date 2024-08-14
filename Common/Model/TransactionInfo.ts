@@ -8,3 +8,13 @@ export type TransactionInfo = {
     }
     
 }
+
+export type BeneficiaryInfo = {
+    id: number
+    fullName: string
+    iban: string
+}
+
+export type CodeType = {
+    [key: string]: number
+  };

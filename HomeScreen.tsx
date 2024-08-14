@@ -1,30 +1,36 @@
 import React from 'react';
-import { View, Text, Button, FlatList, StyleSheet } from 'react-native';
-import { useTransactions } from './TransactionContext';
-import {NativeStackScreenProps} from '@react-navigation/native-stack'
-import { RootParamList } from './NewScreens';
-import { TransactionInfo } from './Common';
+import {
+  View,
+  Text,
+  Button,
+  FlatList,
+  StyleSheet,
+  TouchableOpacity,
+} from 'react-native';
+import {useTransactions} from './TransactionContext';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {RootParamList} from './NewScreens';
+import {TransactionInfo} from './Common';
 
-const HomeScreen = ({ navigation }:NativeStackScreenProps<RootParamList>) => {
-  const { transactions, balance } = useTransactions();
+const HomeScreen = ({navigation}: NativeStackScreenProps<RootParamList>) => {
+  // const { transactions, balance } = useTransactions();
 
-  const renderItem = ({ item }: any) => (
-    <View style={styles.item}>
-      <Text style={styles.itemText}>Transaction ID: {item.id}</Text>
-      <Text style={styles.itemText}>Amount: ${item.amount.toFixed(2)}</Text>
-      {item.account && (
-        <>
-          <Text style={styles.itemText}>To: {item.account.name}</Text>
-          <Text style={styles.itemText}>IBAN: {item.account.iban}</Text>
-        </>
-      )}
-    </View>
-  );
+  // const renderItem = ({ item }: any) => (
+  //   <View style={styles.item}>
+  //     <Text style={styles.itemText}>Transaction ID: {item.id}</Text>
+  //     <Text style={styles.itemText}>Amount: ${item.amount.toFixed(2)}</Text>
+  //     {item.account && (
+  //       <>
+  //         <Text style={styles.itemText}>To: {item.account.name}</Text>
+  //         <Text style={styles.itemText}>IBAN: {item.account.iban}</Text>
+  //       </>
+  //     )}
+  //   </View>
+  // );
 
   return (
     <View style={styles.container}>
-      <Text style={styles.balanceText}>Current Balance: ${balance.toFixed(2)}</Text>
-      <Text>hello IBAN</Text>
+      {/* <Text style={styles.balanceText}>Current Balance: ${balance.toFixed(2)}</Text>
       <Button
         title="Add Transaction"
         onPress={() => navigation.navigate('Transaction')}
@@ -34,7 +40,17 @@ const HomeScreen = ({ navigation }:NativeStackScreenProps<RootParamList>) => {
         keyExtractor={(item) => item.id.toString()}
         renderItem={renderItem}
         contentContainerStyle={styles.listContainer}
-      />
+      /> */}
+      <TouchableOpacity onPress={() => {navigation.navigate("BeneficiaryListScreen")}}>
+        <View style={styles.buttonContent}>
+          <Text style={styles.buttonText}>Beneficiary List</Text>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => {navigation.navigate("TransactionListScreen")}}>
+        <View style={styles.buttonContent}>
+          <Text style={styles.buttonText}>Transaction List</Text>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -46,26 +62,22 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingTop: 20,
   },
-  balanceText: {
-    fontSize: 18,
-    fontWeight: 'bold',
+  buttonContent: {
     marginBottom: 20,
-  },
-  item: {
-    backgroundColor: '#f9f9f9',
-    padding: 20,
-    marginVertical: 8,
-    marginHorizontal: 16,
-    borderRadius: 5,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    minWidth: 100,
+    paddingHorizontal: 20,
+    paddingVertical: 20,
+    borderRadius: 20,
     borderWidth: 1,
-    borderColor: '#ddd',
+    borderColor: '#ed1b2e',
   },
-  itemText: {
-    fontSize: 16,
-  },
-  listContainer: {
-    flexGrow: 1,
-    width: '100%',
+  buttonText: {
+    color: '#ed1b2e',
+    fontSize: 15,
+    fontWeight: 'bold',
   },
 });
 
