@@ -17,20 +17,24 @@ const TransactionScreen = ({
   const [amount, setAmount] = useState('');
   const [name, setName] = useState<SelectOption>();
   const [iban, setIban] = useState('');
-  const {addTransaction, beneficiaryList} = useTransactions();
+  const {addTransaction, beneficiaryList, balance} = useTransactions();
   const transactionForm = useForm<TransactionForm.TransactionData>({
     defaultValues: {
       amount: '',
       beneficiary: undefined,
       iban: '',
     },
+    mode: 'onChange',
   });
 
-  const handleTransaction = async() => {
+  const handleTransaction = async () => {
     const isValidData = await transactionForm.trigger();
     if (isValidData) {
-      const formData = transactionForm.getValues()
-      const accountDetails = {name: formData.beneficiary?.label || '', iban: formData.iban};
+      const formData = transactionForm.getValues();
+      const accountDetails = {
+        name: formData.beneficiary?.label || '',
+        iban: formData.iban,
+      };
       addTransaction(formData.amount, accountDetails);
       navigation.goBack();
     }
@@ -42,9 +46,16 @@ const TransactionScreen = ({
         control={transactionForm.control}
         name="amount"
         rules={{
-          required: {
-            value: true,
-            message: 'Please input Amount',
+          validate: (val: string) => {
+            if (!val || !val.trim()) {
+              return 'Please input Amount';
+            } else if (isNaN(Number(val))) {
+              return 'Please input number for Amount';
+            } else if (!!val && Number(val) > balance) {
+              return `Amount should be not greater than your balance($${balance})`;
+            } else {
+              return true;
+            }
           },
         }}
         render={({field: {value, onChange, onBlur}, fieldState: {error}}) => (
@@ -55,7 +66,7 @@ const TransactionScreen = ({
             onBlur={onBlur}
             placeholder="Enter amount"
             keyboardType={'numeric'}
-            errorMessage={!value ? error?.message : ''}
+            errorMessage={error?.message}
           />
         )}
       />

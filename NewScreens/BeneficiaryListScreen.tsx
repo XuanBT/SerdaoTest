@@ -114,13 +114,14 @@ const benStyles = StyleSheet.create({
   },
   buttonContent: {
     marginVertical: 15,
+    marginRight: 10
   },
   tableContainer: {
     display: 'flex',
     borderWidth: 1,
     borderRadius: 8,
     borderColor: '#D3DCE6',
-    marginRight: 15,
+    marginHorizontal: 10,
   },
   tableHeader: {
     display: 'flex',
