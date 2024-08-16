@@ -3,8 +3,8 @@ After clone source sucessfully, You should do many follow steps to run app on IO
 
 1. Set up to run the Project on IOS
   Installing requirements:
-  You need install Node(v18 or higher), React native CLI, Xcode, Simulator on your computer
-    After installed System requirements, you should open terminal and run below command lines:
+    You need install Node(v18 or higher), React native CLI, Xcode, Simulator on your computer
+  After installed System requirements, you should open terminal and run below command lines:
   - cd <--Project folder-->   // navigate to project folder
   - yarn or npm install // install all packages of the project
   - cd ios //navigate to ios folder of project
@@ -16,7 +16,7 @@ After clone source sucessfully, You should do many follow steps to run app on IO
 
 2. Set up to run the project on Android
     Installing requirements:
-    You need to install Node(v18 or higher), React native CLI, JDK(v17), Android studio, Android 14 SDK (include: SDK Platform 34, Intel x86 Atom_64 System Image) on your computer
+      You need to install Node(v18 or higher), React native CLI, JDK(v17), Android studio, Android 14 SDK (include: SDK Platform 34, Intel x86 Atom_64 System Image) on your computer
 
     After Installing dependencies, you add or update your JAVA_HOME environment variable to ~/.zshrc (or ~/.bashrc) file 
     - export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home // add this line to ~/.zshrc (or ~/.bashrc) file
@@ -28,6 +28,7 @@ After clone source sucessfully, You should do many follow steps to run app on IO
 
     Next step, you need to create a Android virtual device(Pixel 6a API 34 recommend) from Android Virtual Device Manager in Android Studio. After that, you launch this virtual device. Final step, you run below command lines on Terminal:
     - cd <--Project folder--> // navigate to project folder
+    - yarn or npm install // install all packages of the project, skip this command line if you have already install all package or project
     - npm run android or yarn android   // make sure you launched an android emulator before run this command line
 
 Notes: you should use macbook to do above setup steps
