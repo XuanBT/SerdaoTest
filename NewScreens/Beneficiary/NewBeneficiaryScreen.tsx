@@ -12,10 +12,7 @@ import {NewBeneficiaryConst, NewBeneficiaryForm} from './NewBeneficiaryForm';
 export const NewBeneficiaryScreen = (
   props: NativeStackScreenProps<RootParamList>,
 ) => {
-  // const [firstName, setFirstName] = React.useState('');
-  // const [lastName, setLastName] = React.useState('');
-  // const [iban, setIban] = React.useState('');
-  const {addBeneficiary} = useTransactions();
+  const {addBeneficiary, beneficiaryList} = useTransactions();
   const newBeneficiaryForm = useForm<NewBeneficiaryForm.NewBeneficiaryFormData>(
     {
       defaultValues: {
@@ -23,7 +20,8 @@ export const NewBeneficiaryScreen = (
         lastName: '',
         iban: '',
       },
-    },
+      mode: 'onChange'
+    }
   );
 
   function isValidIBANNumber(input: string) {
@@ -120,10 +118,10 @@ export const NewBeneficiaryScreen = (
                 if (!value || !value.trim()) {
                   return 'Please input IBAN';
                 } else if (!isValidIBANNumber(value)) {
-                  // console.log('IBAN value is not valid');
                   return 'IBAN value is not valid. Please input Valid IBan with IBAN rule';
+                } else if(beneficiaryList.some((x)=> x.iban === value)) {
+                  return 'This IBAN code has already existed in Beneficiary List. Please input another IBAN code'
                 } else {
-                  console.log('valid');
                   return true;
                 }
               },

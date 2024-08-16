@@ -59,23 +59,18 @@ export const TransactionProvider = ({children}: PropsWithChildren) => {
     AsyncStorage.getItem('beneficiaryList').then(benData => {
       if (benData) {
         const benList: Array<BeneficiaryInfo> = JSON.parse(benData);
-        console.log('get ben data from AsyncStorage to parse ben List');
         setBeneficiaryList(benList);
       }
     });
     AsyncStorage.getItem('transactionList').then(transactionData => {
       if (transactionData) {
         const transacList: TransactionInfo[] = JSON.parse(transactionData);
-        console.log(
-          'get transaction data from AsyncStorage to parse transaction List',
-        );
         setTransactions(transacList);
       }
     });
     AsyncStorage.getItem('balance').then(balanceData => {
       if (balanceData) {
         const balanceInfo: string = JSON.parse(balanceData);
-        console.log('get balance Data from AsyncStorage');
         setBalance(Number(balanceInfo));
       }
     });

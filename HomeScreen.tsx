@@ -11,7 +11,6 @@ import {
 import {useTransactions} from './TransactionContext';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootParamList} from './NewScreens';
-import {TransactionInfo} from './Common';
 
 const HomeScreen = ({navigation}: NativeStackScreenProps<RootParamList>) => {
   
