@@ -1,9 +1,9 @@
 import React from 'react';
 import {Button, SafeAreaView, StyleSheet, TextInput, View} from 'react-native';
-import {useTransactions} from '../TransactionContext';
+import {useTransactions} from '../../TransactionContext';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {RootParamList} from './RootParamList';
-import {HightLightButton, Input} from '../Common/Components';
+import {RootParamList} from '../RootParamList';
+import {HightLightButton, Input} from '../../Common/Components';
 import {Controller, useForm} from 'react-hook-form';
 import {NewBeneficiaryConst, NewBeneficiaryForm} from './NewBeneficiaryForm';
 

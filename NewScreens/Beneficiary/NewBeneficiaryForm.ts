@@ -1,5 +1,4 @@
-import { CodeType } from "../Common";
-import { SelectOption } from "../Common/Components"
+import { CodeType } from "../../Common";
 
 export namespace NewBeneficiaryForm {
     export interface NewBeneficiaryFormData {

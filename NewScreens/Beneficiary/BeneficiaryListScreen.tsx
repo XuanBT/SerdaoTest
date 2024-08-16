@@ -9,10 +9,10 @@ import {
   ScrollView,
   useWindowDimensions,
 } from 'react-native';
-import {useTransactions} from '../TransactionContext';
+import {useTransactions} from '../../TransactionContext';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {RootParamList} from './RootParamList';
-import {HightLightButton} from '../Common/Components';
+import {RootParamList} from '../RootParamList';
+import {HightLightButton} from '../../Common/Components';
 export const BeneficiaryListScreen = (
   props: NativeStackScreenProps<RootParamList>,
 ) => {
@@ -29,11 +29,6 @@ export const BeneficiaryListScreen = (
   return (
     <View style={benStyles.container}>
       <SafeAreaView>
-        {/* <Text>Beneficiary List</Text> */}
-        {/* <Button
-          title="Add Beneficiary"
-          onPress={() => props.navigation.navigate("NewBeneficiaryScreen")}
-        /> */}
         <View style={benStyles.buttonContainer}>
           <HightLightButton
             label="Add Beneficiary"
@@ -43,13 +38,6 @@ export const BeneficiaryListScreen = (
             containerStyle={benStyles.buttonContent}
           />
         </View>
-
-        {/* <FlatList
-          data={beneficiaryList}
-          keyExtractor={item => item.id.toString()}
-          renderItem={renderItem}
-          contentContainerStyle={benStyles.listContainer}
-        /> */}
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={true}>
           <View style={benStyles.tableContainer}>
             <View style={benStyles.tableHeader}>

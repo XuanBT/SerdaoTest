@@ -2,7 +2,8 @@ import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import React from 'react';
 import {RootParamList} from './RootParamList';
 import {Button, FlatList, StyleSheet, Text, View} from 'react-native';
-import { useTransactions } from '../TransactionContext';
+import {useTransactions} from '../TransactionContext';
+import {HightLightButton} from '../Common/Components';
 
 export const TransactionListScreen = (
   props: NativeStackScreenProps<RootParamList>,
@@ -26,9 +27,9 @@ export const TransactionListScreen = (
       <Text style={styles.balanceText}>
         Current Balance: ${balance.toFixed(2)}
       </Text>
-      <Button
-        title="Add Transaction"
-        onPress={() => props.navigation.navigate('Transaction')}
+      <HightLightButton
+        label="Add Transaction"
+        onClickButtonEvent={() => props.navigation.navigate('Transaction')}
       />
       <FlatList
         data={transactions}
