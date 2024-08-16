@@ -33,4 +33,4 @@
     - yarn or npm install // install all packages of the project, skip this command line if you have already installed all packages of project
     - npm run android or yarn android   // make sure you launched an android emulator before run this command line
 
-Notes: you should use macbook to do above setup steps
+**Notes:** you should use macbook to do above setup steps
