@@ -1,4 +1,4 @@
-## Guide Document how to run Project
+## Guideline Document how to run Project
     You use git command to clone source code with reposity url like: git clone https://github.com/XuanBT/SerdaoTest.git <br/>
     After clone source sucessfully, You should do many follow steps to run app on IOS(Simulator) or Android(emulator)
 
