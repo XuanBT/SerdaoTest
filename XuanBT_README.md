@@ -1,9 +1,10 @@
-You use git command to clone source code with reposity url like: git clone https://github.com/XuanBT/SerdaoTest.git <br/>
-After clone source sucessfully, You should do many follow steps to run app on IOS(Simulator) or Android(emulator)
+## Guide Document how to run Project
+    You use git command to clone source code with reposity url like: git clone https://github.com/XuanBT/SerdaoTest.git <br/>
+    After clone source sucessfully, You should do many follow steps to run app on IOS(Simulator) or Android(emulator)
 
 ### 1. Set up to run the Project on IOS <br/>
     Installing requirements:
-      You need install Node(v18 or higher), React native CLI, Xcode, Simulator, CocoaPods on your computer.<br/>
+      You need install Node(v18 or higher), React native CLI, Xcode, Simulator, CocoaPods on your computer.
 
     After installed System requirements, you should open terminal and run below command lines:
     - cd <--Project folder-->   // navigate to project folder
