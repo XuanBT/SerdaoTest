@@ -15,7 +15,7 @@ After clone source sucessfully, You should do many follow steps to run app on IO
   - yarn ios or npm run ios //run app on IOS simulator
 
 2. Set up to run the project on Android <br/>
-  Installing requirements:
+    Installing requirements:
       You need to install Node(v18 or higher), React native CLI, JDK(v17), Android studio, Android 14 SDK (include: SDK Platform 34, Intel x86 Atom_64 System Image) on your computer
 
     After Installing dependencies, you add or update your JAVA_HOME environment variable to ~/.zshrc (or ~/.bashrc) file 
@@ -26,7 +26,7 @@ After clone source sucessfully, You should do many follow steps to run app on IO
     - export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
     - export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 
-    Next step, you need to create a Android virtual device(Pixel 6a API 34 recommend) from Android Virtual Device Manager in Android Studio. After that, you launch this virtual device. Final step, you run below command lines on Terminal:
+    Next step, you need to create a Android virtual device(Pixel 6a API 34 recommend) from Android Virtual Device Manager in Android Studio. After that, you launch this virtual device.         Final step, you run below command lines on Terminal:
     - cd <--Project folder--> // navigate to project folder
     - yarn or npm install // install all packages of the project, skip this command line if you have already installed all packages of project
     - npm run android or yarn android   // make sure you launched an android emulator before run this command line
