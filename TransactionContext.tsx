@@ -6,6 +6,7 @@ import React, {
 } from 'react';
 import {BeneficiaryInfo, TransactionInfo} from './Common';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import * as KeyChain from 'react-native-keychain'
 
 type TransactionContextData = {
   balance: number;
@@ -45,6 +46,7 @@ export const TransactionProvider = ({children}: PropsWithChildren) => {
     const transactionList = [...transactions, newTransaction];
     setTransactions(transactionList);
     setBalance(balanceData);
+    // KeyChain.setGenericPassword('hoahongden','12345',{service: 'userinfo'})
     AsyncStorage.setItem('balance', balanceData.toString());
     AsyncStorage.setItem('transactionList', JSON.stringify(transactionList));
   };
@@ -74,6 +76,13 @@ export const TransactionProvider = ({children}: PropsWithChildren) => {
         setBalance(Number(balanceInfo));
       }
     });
+    KeyChain.setGenericPassword('hoahongden','12345',{service: 'userinfo'})
+    KeyChain.getGenericPassword({service: 'userinfo'}).then((userData)=> {
+      if(userData){
+        console.log('username:'+ userData.username)
+        console.log('password:'+ userData.password)
+      }
+    })
   }, []);
 
   return (
