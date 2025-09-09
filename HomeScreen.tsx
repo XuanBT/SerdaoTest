@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   AppState,
 } from 'react-native';
-import {useTransactions} from './TransactionContext';
+import {useTransactions} from './NewScreens/TransactionContext';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootParamList} from './NewScreens';
 

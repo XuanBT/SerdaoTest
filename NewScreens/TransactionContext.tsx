@@ -4,7 +4,7 @@ import React, {
   useContext,
   PropsWithChildren,
 } from 'react';
-import {BeneficiaryInfo, TransactionInfo} from './Common';
+import {BeneficiaryInfo, TransactionInfo} from '../Common';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as KeyChain from 'react-native-keychain'
 

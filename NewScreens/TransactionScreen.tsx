@@ -2,13 +2,13 @@ import React, {useState} from 'react';
 import {View, TextInput, Button, Text} from 'react-native';
 import {useTransactions} from './TransactionContext';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {RootParamList, TransactionForm} from './NewScreens';
+import {RootParamList, TransactionForm} from '.';
 import {
   HightLightButton,
   Input,
   SearchedSelect,
   SelectOption,
-} from './Common/Components';
+} from '../Common/Components';
 import {Controller, useForm} from 'react-hook-form';
 
 const TransactionScreen = ({

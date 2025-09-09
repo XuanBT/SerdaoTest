@@ -2,7 +2,7 @@ import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import React from 'react';
 import {RootParamList} from './RootParamList';
 import {Button, FlatList, StyleSheet, Text, View} from 'react-native';
-import {useTransactions} from '../TransactionContext';
+import {useTransactions} from './TransactionContext';
 import {HightLightButton} from '../Common/Components';
 
 export const TransactionListScreen = (

@@ -9,7 +9,7 @@ import {
   ScrollView,
   useWindowDimensions,
 } from 'react-native';
-import {useTransactions} from '../../TransactionContext';
+import {useTransactions} from '../TransactionContext';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootParamList} from '../RootParamList';
 import {HightLightButton} from '../../Common/Components';
